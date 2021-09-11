@@ -1,0 +1,41 @@
+
+true  false
+x and y
+x or y
+!x
+P(e)
+e in S
+Any(x->S|P(x))
+Exist(x->S|P(x))
+{...}
+{x|P(x)}
+(...)
+
+
+
+S1 subeq S2 := Any(e -> S1|e in S2)
+
+Pow(S) := {e|e subeq S}
+
+S1==S2 := Any(e->S1|e in S2) and Any(e->S2|e in S1)
+S1!=S2 := !(S1==S2)
+
+S1|S2 := {x|x in S1 or x in S2}
+S1+S2 := S1|S2
+S1&S2 := {x|x in S1 and x in S2}
+S1-S2 := {x|x in S1 and !(x in S2)}
+S1*S2 := {(x, y)| x in S1 and y in S2}
+
+
+
+
+N = {0, 1, 2, 3, ...}
+1=0+1
+2=1+1
+3=2+1
+...
+not exist(x->N|x+1==0)
+Any(x->N,y->N|x!=y => x+1!=y+1)
+P(0) and Any(x->N-{0}|P(x)=>P(x+1)) => Any(x->N|P(x))
+
+x>y: 
