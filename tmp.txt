@@ -39,3 +39,31 @@ Any(x->N,y->N|x!=y => x+1!=y+1)
 P(0) and Any(x->N-{0}|P(x)=>P(x+1)) => Any(x->N|P(x))
 
 x>y: 
+
+
+true
+false
+x
+x and y
+x or y
+!x
+x=>y
+x<=>y
+
+z := x and y
+
+x or !y and z
+x or y
+
+
+x and y or z <=> y or z
+
+
+
+
+
+
+
+
+
+
