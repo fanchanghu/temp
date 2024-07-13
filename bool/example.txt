@@ -1,0 +1,14 @@
+define:
+Bool A,B,C
+
+given: 
+A=>B
+B=>C
+
+prove:
+A=>C
+
+proof:
+(A=>B) and (B=>C) => (A=>C)
+
+

@@ -1,0 +1,8 @@
+
+
+true, false
+Bool := {true, false}
+
+
+
+

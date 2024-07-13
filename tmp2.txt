@@ -1,13 +1,48 @@
-定理证明校验
+Element, [A-Za-z][A-Za-z0-9]*
+Tuple<n>, (Element+) 
+Set, {Element*}
 
-通过公里和已证明的定理，校验新定理的证明过程是否正确。
+Function, {Tuple<2>} ... Tuple[1] is unique.  also could be write as: {Tuple[1]} -> {Tuple[2]}
+
+true
+false
+Bool := {true, false}
 
 
-基于：
-布尔逻辑
-一阶逻辑
 
-集合论公理（ZFC）
-自然数公理
-实数公理
+
+
+
+
+@and := Bool X Bool -> Bool, [codes]
+@or := Bool X Bool -> Bool, [codes]
+@not := Bool -> Bool, [codes]
+@xor := Bool X Bool -> Bool, [codes] 
+=> := Bool X Bool -> Bool, [codes]
+<=> := Bool X Bool -> Bool, [codes]
+
+== := (Element, Element) -> Bool, [codes]
+!= := (Element, Element) -> Bool, not($1==$2)
+@in := (Element, Set) -> Bool, [codes]
+BoolExp := Element -> Bool
+
+
+any := (Set, BoolExp) -> Bool, [codes]
+exist := (Set, BoolExp) -> Bool, [codes]
+@sub := (Set, Set) -> Bool, any($1, in(?,$2))
+@psub := (Set, Set) -> Bool, ($1 sub $2) and exist($2, not in(?,$1))
+
+
+
+BinaryOp := (Element, Element) -> Element
+
+commutative := BinaryOp -> Bool, any($1.definition X $1.definition, $1(?.1, ?.2) == $1(?.2, ?.1))
+combinative := BinaryOp -> Bool, any($1.definition X $1.definition X $1.definition, $1($1(?.1, ?.2), ?.3) == $1(?.1, $1(?.2, ?.3)))
+
+
+Concept   概念
+Element   元素
+Variable  变量
+
+
 

@@ -1,0 +1,52 @@
+
+
+Line = Defination | Proposition
+
+Defination = CommonDefination | EqualDefination | InDefination | FunctionDefination | FunctionDefination2
+
+CommonDefination = 'let' ElementNameList
+
+EqualDefination = 'let' ElementName '=' ElementExpr
+
+InDefination = 'let' ElementNameList 'in' SetExpr
+
+FunctionDefination = 'let' FunctionName '(' SetExprList ')' '->' SetExpr
+
+FunctionDefination2 = FunctionDefination ':' ElementMapList
+
+ElementMapList = ElementMap | ElementMapList ',' ElementMap
+
+ElementMap = ElementExpr '->' ElementExpr
+
+SetExpr = ConstSet | BinaryExpr | FunctionExpr
+
+SetExprList = SetExpr | SetExprList ',' SetExpr
+
+ElementNameList = ElementName | ElementNameList ',' ElementName
+
+ElementExpr = ConstExpr | ElementName | BinaryExpr | FunctionExpr
+
+ConstExpr = ConstBoolean | ConstNumber | ConstTuple | ConstSet
+
+ConstBoolean = 'True' | 'False'
+
+ConstTuple = '(' ElementExprList ')'
+
+ConstSet = '{' ElementExprList '}'
+
+ElementExprList = ElementExpr | ElementExprList ',' ElementExpr
+
+BinaryExpr = ElementExpr BinaryOperator ElementExpr
+
+BinaryOperator = '+' | '-' | '*' | '/' | '%'
+
+
+FunctionExpr = FunctionName '(' FunctionParamList ')'
+
+FunctionParamList = FunctionParam | FunctionParamList ',' FunctionParam
+
+FunctionParam = ElementExpr
+
+Proposition = BinaryExpr | FunctionExpr
+
+
